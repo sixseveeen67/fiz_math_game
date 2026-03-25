@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мир в науке | Образовательная платформа</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -10,12 +10,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            background: linear-gradient(145deg, #0a0f2a 0%, #0f172a 100%);
-            color: #e2e8f0;
+            background: #0a0e1a;
+            background-image: radial-gradient(circle at 25% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 100%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+            color: #eef2ff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,49 +26,49 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 24px;
             flex: 1;
         }
 
-        /* Шапка */
         header {
-            background: rgba(15, 25, 45, 0.8);
-            backdrop-filter: blur(12px);
-            border-radius: 32px;
-            padding: 16px 28px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 28px;
+            padding: 18px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            margin-bottom: 35px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 16px;
         }
 
         .logo-icon {
             font-size: 2rem;
-            background: linear-gradient(135deg, #f97316, #ec489a);
-            width: 52px;
-            height: 52px;
-            border-radius: 20px;
+            background: linear-gradient(145deg, #6366f1, #ec489a);
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
         }
 
         .logo-text h1 {
             font-size: 1.6rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #fff, #94a3f8);
+            background: linear-gradient(135deg, #fff, #a5b4fc);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            letter-spacing: -0.3px;
         }
 
         .logo-text p {
@@ -76,19 +78,19 @@
 
         .subject-nav {
             display: flex;
-            gap: 15px;
+            gap: 14px;
         }
 
         .subject-btn {
-            padding: 10px 24px;
+            padding: 10px 26px;
             border: none;
-            border-radius: 40px;
-            background: rgba(255, 255, 255, 0.08);
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.05);
             color: #e2e8f0;
             font-weight: 600;
             font-size: 0.95rem;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -97,36 +99,36 @@
         }
 
         .subject-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
 
         .subject-btn.active {
-            background: linear-gradient(135deg, #f97316, #ec489a);
+            background: linear-gradient(135deg, #6366f1, #ec489a);
             border: none;
-            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
+            box-shadow: 0 6px 14px rgba(99, 102, 241, 0.4);
         }
 
-        /* Выбор предмета */
         .subject-selection {
             text-align: center;
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
 
         .selection-title {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #c084fc, #f97316);
+            background: linear-gradient(135deg, #ffffff, #c084fc, #f472b6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .selection-subtitle {
             font-size: 1.1rem;
-            color: #94a3b8;
-            margin-bottom: 50px;
+            color: #9ca3af;
+            margin-bottom: 55px;
         }
 
         .subject-cards {
@@ -137,63 +139,64 @@
         }
 
         .subject-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 40px;
-            padding: 40px 30px;
-            width: 320px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 36px;
+            padding: 40px 32px;
+            width: 340px;
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             cursor: pointer;
         }
 
         .subject-card:hover {
-            transform: translateY(-10px);
-            border-color: #f97316;
-            background: rgba(51, 65, 85, 0.8);
+            transform: translateY(-12px);
+            border-color: rgba(99, 102, 241, 0.6);
+            background: rgba(51, 65, 85, 0.7);
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.5);
         }
 
         .subject-icon {
             font-size: 4rem;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .subject-card.math .subject-icon { color: #f97316; }
         .subject-card.physics .subject-icon { color: #3b82f6; }
 
         .subject-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.9rem;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .subject-card p {
-            color: #94a3b8;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 28px;
+            line-height: 1.5;
         }
 
-        /* Контент */
         .subject-content {
             display: none;
-            animation: fadeIn 0.4s ease;
+            animation: fadeSlideUp 0.45s ease-out;
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .subject-content.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .content-section {
             background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(12px);
             border-radius: 32px;
-            padding: 28px;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 28px 32px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             display: none;
         }
 
@@ -202,52 +205,58 @@
         }
 
         .section-title {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
+            font-size: 1.7rem;
+            margin-bottom: 28px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
         }
 
         .section-title i {
-            color: #f97316;
+            background: linear-gradient(145deg, #6366f1, #ec489a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        /* Команды */
         .teams-control {
             display: flex;
             gap: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
             flex-wrap: wrap;
         }
 
         .team-input-container {
             flex: 1;
-            min-width: 200px;
+            min-width: 210px;
         }
 
         .team-input-label {
             display: block;
             margin-bottom: 8px;
             font-size: 0.85rem;
-            color: #94a3b8;
+            font-weight: 500;
+            color: #9ca3af;
         }
 
         .team-input {
             width: 100%;
             padding: 12px 18px;
             background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 28px;
-            color: white;
+            color: #f1f5f9;
             font-size: 0.95rem;
             transition: all 0.2s;
         }
 
         .team-input:focus {
-            border-color: #f97316;
+            border-color: #6366f1;
             outline: none;
             background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
         .teams-display {
@@ -258,29 +267,33 @@
         }
 
         .team-card {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.8), rgba(236, 72, 153, 0.8));
+            background: linear-gradient(145deg, #1e293b, #0f172a);
             border-radius: 28px;
-            padding: 20px 25px;
-            min-width: 200px;
+            padding: 22px 28px;
+            min-width: 210px;
             position: relative;
             transition: all 0.2s;
+            border: 1px solid rgba(99, 102, 241, 0.3);
         }
 
         .team-card.current {
             transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(145deg, #6366f1, #a855f7);
+            border: none;
+            box-shadow: 0 15px 30px -10px rgba(99, 102, 241, 0.5);
         }
 
         .team-card.current::after {
             content: 'ХОД';
             position: absolute;
-            top: 12px;
-            right: 18px;
+            top: 14px;
+            right: 20px;
             background: #10b981;
-            padding: 3px 12px;
-            border-radius: 30px;
+            padding: 4px 14px;
+            border-radius: 40px;
             font-size: 0.7rem;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .team-name {
@@ -292,9 +305,9 @@
         .team-score {
             font-size: 2rem;
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        /* Таблица квиза */
         .quiz-table-section {
             overflow-x: auto;
         }
@@ -307,24 +320,25 @@
         }
 
         .quiz-table th {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 16px;
             text-align: center;
             font-weight: 600;
-            color: #fbbf24;
+            color: #facc15;
+            font-size: 0.9rem;
         }
 
         .quiz-table td {
-            padding: 15px;
+            padding: 16px;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .topic-cell {
-            background: rgba(249, 115, 22, 0.2);
+            background: rgba(99, 102, 241, 0.2);
             font-weight: 600;
             text-align: left;
-            color: #fdba74;
+            color: #c7d2fe;
         }
 
         .question-cell {
@@ -333,7 +347,7 @@
         }
 
         .question-cell:hover {
-            background: rgba(249, 115, 22, 0.3) !important;
+            background: rgba(99, 102, 241, 0.3) !important;
         }
 
         .question-cell.answered {
@@ -350,7 +364,6 @@
             color: #fbbf24;
         }
 
-        /* Модалки */
         .question-modal, .scientist-modal {
             display: none;
             position: fixed;
@@ -359,7 +372,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             align-items: center;
             justify-content: center;
@@ -372,26 +385,26 @@
 
         .question-content, .scientist-modal-content {
             background: #1e293b;
-            border-radius: 32px;
-            padding: 35px;
-            max-width: 700px;
+            border-radius: 36px;
+            padding: 36px;
+            max-width: 720px;
             width: 100%;
             max-height: 85vh;
             overflow-y: auto;
-            border: 1px solid #f97316;
+            border: 1px solid #6366f1;
             position: relative;
         }
 
         .close-modal {
             position: absolute;
-            top: 15px;
+            top: 18px;
             right: 20px;
             background: #ef4444;
             color: white;
             border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            border-radius: 30px;
             cursor: pointer;
             font-size: 1.1rem;
             transition: all 0.2s;
@@ -404,18 +417,18 @@
 
         .question-text {
             font-size: 1.2rem;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
             line-height: 1.5;
         }
 
         .answers-container {
             display: grid;
             gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .answer-btn {
-            padding: 14px 18px;
+            padding: 14px 20px;
             background: #0f172a;
             border: 1px solid #334155;
             border-radius: 40px;
@@ -426,22 +439,28 @@
         }
 
         .answer-btn:hover {
-            border-color: #f97316;
+            border-color: #6366f1;
             background: #1e293b;
+            transform: translateX(5px);
         }
 
         .answer-btn.selected {
-            border-color: #f97316;
-            background: rgba(249, 115, 22, 0.3);
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.3);
         }
 
-        /* Задачи */
         .task {
             background: #0f172a;
             border-radius: 28px;
             padding: 24px;
-            margin-bottom: 20px;
-            border-left: 5px solid #f97316;
+            margin-bottom: 24px;
+            border-left: 5px solid #6366f1;
+            transition: all 0.2s;
+        }
+
+        .task:hover {
+            transform: translateY(-3px);
+            background: #1e293b;
         }
 
         .task-header {
@@ -454,12 +473,13 @@
         .task-number {
             font-weight: 700;
             font-size: 1.2rem;
-            color: #f97316;
+            color: #818cf8;
         }
 
         .task-attempts {
             display: flex;
             gap: 8px;
+            align-items: center;
         }
 
         .attempt-dot {
@@ -482,21 +502,21 @@
 
         .answer-input {
             flex: 1;
-            padding: 12px 18px;
+            padding: 12px 20px;
             background: #0f172a;
             border: 1px solid #334155;
             border-radius: 40px;
-            color: white;
+            color: #f1f5f9;
         }
 
         .answer-input:focus {
-            border-color: #f97316;
+            border-color: #6366f1;
             outline: none;
         }
 
         .task-btn {
             padding: 12px 28px;
-            background: linear-gradient(135deg, #f97316, #ec489a);
+            background: linear-gradient(135deg, #6366f1, #a855f7);
             border: none;
             border-radius: 40px;
             color: white;
@@ -507,32 +527,32 @@
 
         .task-btn:hover {
             transform: scale(1.02);
+            filter: brightness(1.05);
         }
 
         .task-feedback {
-            margin-top: 15px;
-            padding: 15px;
+            margin-top: 18px;
+            padding: 16px;
             border-radius: 24px;
             display: none;
         }
 
         .task-feedback.correct {
-            background: rgba(16, 185, 129, 0.2);
+            background: rgba(16, 185, 129, 0.15);
             border: 1px solid #10b981;
             display: block;
         }
 
         .task-feedback.incorrect {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(239, 68, 68, 0.15);
             border: 1px solid #ef4444;
             display: block;
         }
 
-        /* Ученые */
         .scientists-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 28px;
         }
 
         .scientist-card {
@@ -540,57 +560,57 @@
             border-radius: 28px;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.25s;
             border: 1px solid #334155;
         }
 
         .scientist-card:hover {
-            transform: translateY(-5px);
-            border-color: #f97316;
+            transform: translateY(-6px);
+            border-color: #6366f1;
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.5);
         }
 
         .scientist-image {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
             background: #1e293b;
         }
 
         .scientist-info {
-            padding: 20px;
+            padding: 22px;
         }
 
         .scientist-name {
             font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .scientist-field {
-            color: #f97316;
+            color: #818cf8;
             font-size: 0.85rem;
             margin-bottom: 12px;
         }
 
         .scientist-facts {
             font-size: 0.85rem;
-            color: #94a3b8;
-            line-height: 1.4;
+            color: #9ca3af;
+            line-height: 1.45;
         }
 
-        /* Кнопки */
         .action-buttons {
             display: flex;
             justify-content: center;
             gap: 18px;
-            margin-top: 25px;
+            margin-top: 28px;
             flex-wrap: wrap;
         }
 
         .action-btn {
             padding: 12px 28px;
             border: none;
-            border-radius: 40px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
@@ -598,11 +618,11 @@
             align-items: center;
             gap: 10px;
             background: #334155;
-            color: white;
+            color: #f1f5f9;
         }
 
         .action-btn.primary {
-            background: linear-gradient(135deg, #f97316, #ec489a);
+            background: linear-gradient(135deg, #6366f1, #ec489a);
         }
 
         .action-btn.secondary {
@@ -611,134 +631,403 @@
         }
 
         .action-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             filter: brightness(1.05);
         }
 
         footer {
-            background: #0f172a;
-            padding: 25px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 28px 20px;
             text-align: center;
-            margin-top: 40px;
-            border-top: 1px solid #334155;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-developers {
             font-size: 0.8rem;
-            color: #64748b;
+            color: #9ca3af;
+            line-height: 1.6;
         }
 
-        @media (max-width: 700px) {
-            header { flex-direction: column; gap: 15px; text-align: center; }
+        @media (max-width: 768px) {
+            .container { padding: 16px; }
+            header { flex-direction: column; gap: 16px; text-align: center; }
             .selection-title { font-size: 2rem; }
             .team-card { min-width: 100%; }
+            .action-btn { padding: 10px 22px; }
+            .quiz-table { font-size: 0.75rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <header id="main-header">
             <div class="logo">
-                <div class="logo-icon"><i class="fas fa-atom"></i></div>
+                <div class="logo-icon"><i class="fas fa-flask"></i></div>
                 <div class="logo-text">
                     <h1>Мир в науке</h1>
-                    <p>Физика • Математика | 10-11 классы, 1 курс СПО</p>
+                    <p>Физика и Математика • 10-11 классы, 1 курс СПО</p>
                 </div>
             </div>
-            <div class="subject-nav" id="subject-nav" style="display: none;">
+            <div class="subject-nav" id="subject-nav">
                 <button class="subject-btn math" data-subject="math"><i class="fas fa-calculator"></i> Математика</button>
                 <button class="subject-btn physics" data-subject="physics"><i class="fas fa-atom"></i> Физика</button>
             </div>
         </header>
 
-        <!-- Экран выбора предмета -->
         <section class="subject-selection" id="subject-selection">
-            <h1 class="selection-title">Выберите предмет</h1>
-            <p class="selection-subtitle">Интерактивные квизы, задачи и знакомство с великими учеными</p>
+            <h1 class="selection-title">Выберите предмет для изучения</h1>
+            <p class="selection-subtitle">Изучайте сложные темы через интерактивные квизы, задачи и знакомство с великими учеными</p>
             <div class="subject-cards">
                 <div class="subject-card math" data-subject="math">
                     <div class="subject-icon"><i class="fas fa-calculator"></i></div>
                     <h2>Математика</h2>
-                    <p>Алгебра, геометрия, тригонометрия, логарифмы, производные</p>
-                    <button class="action-btn primary start-subject" data-subject="math"><i class="fas fa-play"></i> Начать</button>
+                    <p>Алгебра, геометрия, математический анализ, тригонометрия, логарифмы</p>
+                    <div class="action-buttons">
+                        <button class="action-btn primary start-subject" data-subject="math"><i class="fas fa-play-circle"></i> Начать изучение</button>
+                    </div>
                 </div>
                 <div class="subject-card physics" data-subject="physics">
                     <div class="subject-icon"><i class="fas fa-atom"></i></div>
                     <h2>Физика</h2>
-                    <p>Механика, термодинамика, электричество, оптика, кванты</p>
-                    <button class="action-btn primary start-subject" data-subject="physics"><i class="fas fa-play"></i> Начать</button>
+                    <p>Механика, термодинамика, электродинамика, квантовая физика, оптика</p>
+                    <div class="action-buttons">
+                        <button class="action-btn primary start-subject" data-subject="physics"><i class="fas fa-play-circle"></i> Начать изучение</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Контент математики -->
         <section class="subject-content" id="math-content">
-            <div class="content-section active" id="math-teams">
-                <h2 class="section-title"><i class="fas fa-users"></i> Управление командами</h2>
+            <div class="content-section teams-section active" id="math-teams">
+                <h2 class="section-title"><i class="fas fa-users"></i> Управление командами для математики</h2>
                 <div class="teams-control">
-                    <div class="team-input-container"><label class="team-input-label">Команда 1</label><input type="text" class="team-input" id="math-team1" value="Геометры"></div>
-                    <div class="team-input-container"><label class="team-input-label">Команда 2</label><input type="text" class="team-input" id="math-team2" value="Алгебраисты"></div>
-                    <div class="team-input-container"><label class="team-input-label">Команда 3</label><input type="text" class="team-input" id="math-team3" placeholder="Необязательно"></div>
+                    <div class="team-input-container"><label class="team-input-label">Команда 1</label><input type="text" class="team-input" id="math-team1" value="Геометры" placeholder="Введите название команды"></div>
+                    <div class="team-input-container"><label class="team-input-label">Команда 2</label><input type="text" class="team-input" id="math-team2" value="Алгебраисты" placeholder="Введите название команды"></div>
+                    <div class="team-input-container"><label class="team-input-label">Команда 3 (необязательно)</label><input type="text" class="team-input" id="math-team3" placeholder="Введите название команды"></div>
                 </div>
-                <div class="action-buttons"><button class="action-btn secondary" id="math-next-team"><i class="fas fa-forward"></i> Следующая команда</button></div>
+                <div class="action-buttons" style="margin-bottom: 25px;"><button class="action-btn secondary" id="math-next-team"><i class="fas fa-user-friends"></i> Следующая команда</button></div>
                 <div class="teams-display" id="math-teams-display"></div>
-                <div class="action-buttons">
-                    <button class="action-btn primary" data-content="quiz"><i class="fas fa-brain"></i> Квиз</button>
-                    <button class="action-btn secondary" data-content="tasks"><i class="fas fa-puzzle-piece"></i> Задачи</button>
-                    <button class="action-btn primary" data-content="scientists"><i class="fas fa-user-graduate"></i> Ученые</button>
+                <div class="action-buttons" style="margin-top: 30px;">
+                    <button class="action-btn primary" data-content="quiz"><i class="fas fa-brain"></i> Перейти к квизу</button>
+                    <button class="action-btn secondary" data-content="tasks"><i class="fas fa-tasks"></i> Перейти к задачам</button>
+                    <button class="action-btn primary" data-content="scientists"><i class="fas fa-user-tie"></i> Перейти к ученым</button>
                 </div>
             </div>
-            <div class="content-section" id="math-quiz"><h2 class="section-title"><i class="fas fa-brain"></i> Математический квиз</h2><div class="action-buttons"><button class="action-btn secondary" id="math-next-team-quiz"><i class="fas fa-forward"></i> Следующая команда</button><button class="action-btn primary" id="math-reset-quiz"><i class="fas fa-sync-alt"></i> Сбросить</button><button class="action-btn secondary" data-content="teams"><i class="fas fa-arrow-left"></i> Назад</button></div><div class="quiz-table-section"><table class="quiz-table" id="math-quiz-table"><thead><tr><th>Тема</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th></tr></thead><tbody></tbody></table></div></div>
-            <div class="content-section" id="math-tasks"><h2 class="section-title"><i class="fas fa-puzzle-piece"></i> Задачи</h2><div id="math-tasks-container"></div><div class="action-buttons"><button class="action-btn primary" id="math-next-task"><i class="fas fa-forward"></i> Следующая задача</button><button class="action-btn secondary" data-content="teams"><i class="fas fa-arrow-left"></i> Назад</button></div></div>
-            <div class="content-section" id="math-scientists"><h2 class="section-title"><i class="fas fa-user-graduate"></i> Великие математики</h2><div class="scientists-grid" id="math-scientists-grid"></div><div class="action-buttons"><button class="action-btn secondary" data-content="teams"><i class="fas fa-arrow-left"></i> Назад</button></div></div>
+            <div class="content-section quiz-table-section" id="math-quiz">
+                <h2 class="section-title"><i class="fas fa-brain"></i> Математический квиз для 10-11 классов</h2>
+                <div class="action-buttons" style="margin-bottom: 30px;">
+                    <button class="action-btn secondary" id="math-next-team-quiz"><i class="fas fa-user-friends"></i> Следующая команда</button>
+                    <button class="action-btn primary" id="math-reset-quiz"><i class="fas fa-redo"></i> Начать квиз заново</button>
+                    <button class="action-btn secondary" data-content="teams"><i class="fas fa-users"></i> Вернуться к командам</button>
+                </div>
+                <table class="quiz-table" id="math-quiz-table"><thead><tr><th>Тема</th><th>10 баллов</th><th>20 баллов</th><th>30 баллов</th><th>40 баллов</th><th>50 баллов</th></tr></thead><tbody></tbody></table>
+            </div>
+            <div class="content-section tasks-section" id="math-tasks">
+                <h2 class="section-title"><i class="fas fa-tasks"></i> Задачи по математике 10-11 класс</h2>
+                <div id="math-tasks-container"></div>
+                <div class="action-buttons"><button class="action-btn primary" id="math-next-task"><i class="fas fa-forward"></i> Следующая задача</button><button class="action-btn secondary" data-content="teams"><i class="fas fa-users"></i> Вернуться к командам</button></div>
+            </div>
+            <div class="content-section scientists-section" id="math-scientists">
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> Великие математики</h2>
+                <div class="scientists-grid" id="math-scientists-grid"></div>
+                <div class="action-buttons"><button class="action-btn secondary" data-content="teams"><i class="fas fa-users"></i> Вернуться к командам</button></div>
+            </div>
         </section>
 
-        <!-- Контент физики -->
         <section class="subject-content" id="physics-content">
-            <div class="content-section active" id="physics-teams">
-                <h2 class="section-title"><i class="fas fa-users"></i> Управление командами</h2>
+            <div class="content-section teams-section active" id="physics-teams">
+                <h2 class="section-title"><i class="fas fa-users"></i> Управление командами для физики</h2>
                 <div class="teams-control">
-                    <div class="team-input-container"><label class="team-input-label">Команда 1</label><input type="text" class="team-input" id="physics-team1" value="Протоны"></div>
-                    <div class="team-input-container"><label class="team-input-label">Команда 2</label><input type="text" class="team-input" id="physics-team2" value="Электроны"></div>
-                    <div class="team-input-container"><label class="team-input-label">Команда 3</label><input type="text" class="team-input" id="physics-team3" placeholder="Необязательно"></div>
+                    <div class="team-input-container"><label class="team-input-label">Команда 1</label><input type="text" class="team-input" id="physics-team1" value="Протоны" placeholder="Введите название команды"></div>
+                    <div class="team-input-container"><label class="team-input-label">Команда 2</label><input type="text" class="team-input" id="physics-team2" value="Электроны" placeholder="Введите название команды"></div>
+                    <div class="team-input-container"><label class="team-input-label">Команда 3 (необязательно)</label><input type="text" class="team-input" id="physics-team3" placeholder="Введите название команды"></div>
                 </div>
-                <div class="action-buttons"><button class="action-btn secondary" id="physics-next-team"><i class="fas fa-forward"></i> Следующая команда</button></div>
+                <div class="action-buttons" style="margin-bottom: 25px;"><button class="action-btn secondary" id="physics-next-team"><i class="fas fa-user-friends"></i> Следующая команда</button></div>
                 <div class="teams-display" id="physics-teams-display"></div>
-                <div class="action-buttons">
-                    <button class="action-btn primary" data-content="quiz"><i class="fas fa-brain"></i> Квиз</button>
-                    <button class="action-btn secondary" data-content="tasks"><i class="fas fa-puzzle-piece"></i> Задачи</button>
-                    <button class="action-btn primary" data-content="scientists"><i class="fas fa-user-graduate"></i> Ученые</button>
+                <div class="action-buttons" style="margin-top: 30px;">
+                    <button class="action-btn primary" data-content="quiz"><i class="fas fa-brain"></i> Перейти к квизу</button>
+                    <button class="action-btn secondary" data-content="tasks"><i class="fas fa-tasks"></i> Перейти к задачам</button>
+                    <button class="action-btn primary" data-content="scientists"><i class="fas fa-user-tie"></i> Перейти к ученым</button>
                 </div>
             </div>
-            <div class="content-section" id="physics-quiz"><h2 class="section-title"><i class="fas fa-brain"></i> Физический квиз</h2><div class="action-buttons"><button class="action-btn secondary" id="physics-next-team-quiz"><i class="fas fa-forward"></i> Следующая команда</button><button class="action-btn primary" id="physics-reset-quiz"><i class="fas fa-sync-alt"></i> Сбросить</button><button class="action-btn secondary" data-content="teams"><i class="fas fa-arrow-left"></i> Назад</button></div><div class="quiz-table-section"><table class="quiz-table" id="physics-quiz-table"><thead><tr><th>Тема</th><th>10</th><th>20</th><th>30</th><th>40</th><th>50</th></tr></thead><tbody></tbody></table></div></div>
-            <div class="content-section" id="physics-tasks"><h2 class="section-title"><i class="fas fa-puzzle-piece"></i> Задачи</h2><div id="physics-tasks-container"></div><div class="action-buttons"><button class="action-btn primary" id="physics-next-task"><i class="fas fa-forward"></i> Следующая задача</button><button class="action-btn secondary" data-content="teams"><i class="fas fa-arrow-left"></i> Назад</button></div></div>
-            <div class="content-section" id="physics-scientists"><h2 class="section-title"><i class="fas fa-user-graduate"></i> Великие физики</h2><div class="scientists-grid" id="physics-scientists-grid"></div><div class="action-buttons"><button class="action-btn secondary" data-content="teams"><i class="fas fa-arrow-left"></i> Назад</button></div></div>
+            <div class="content-section quiz-table-section" id="physics-quiz">
+                <h2 class="section-title"><i class="fas fa-brain"></i> Физический квиз для 10-11 классов</h2>
+                <div class="action-buttons" style="margin-bottom: 30px;">
+                    <button class="action-btn secondary" id="physics-next-team-quiz"><i class="fas fa-user-friends"></i> Следующая команда</button>
+                    <button class="action-btn primary" id="physics-reset-quiz"><i class="fas fa-redo"></i> Начать квиз заново</button>
+                    <button class="action-btn secondary" data-content="teams"><i class="fas fa-users"></i> Вернуться к командам</button>
+                </div>
+                <table class="quiz-table" id="physics-quiz-table"><thead><tr><th>Тема</th><th>10 баллов</th><th>20 баллов</th><th>30 баллов</th><th>40 баллов</th><th>50 баллов</th></tr></thead><tbody></tbody></table>
+            </div>
+            <div class="content-section tasks-section" id="physics-tasks">
+                <h2 class="section-title"><i class="fas fa-tasks"></i> Задачи по физике 10-11 класс</h2>
+                <div id="physics-tasks-container"></div>
+                <div class="action-buttons"><button class="action-btn primary" id="physics-next-task"><i class="fas fa-forward"></i> Следующая задача</button><button class="action-btn secondary" data-content="teams"><i class="fas fa-users"></i> Вернуться к командам</button></div>
+            </div>
+            <div class="content-section scientists-section" id="physics-scientists">
+                <h2 class="section-title"><i class="fas fa-user-tie"></i> Великие физики</h2>
+                <div class="scientists-grid" id="physics-scientists-grid"></div>
+                <div class="action-buttons"><button class="action-btn secondary" data-content="teams"><i class="fas fa-users"></i> Вернуться к командам</button></div>
+            </div>
         </section>
     </div>
 
     <div class="question-modal" id="question-modal"><div class="question-content"><button class="close-modal" id="close-question-modal"><i class="fas fa-times"></i></button><div id="question-data"></div></div></div>
     <div class="scientist-modal" id="scientist-modal"><div class="scientist-modal-content"><button class="close-modal" id="close-scientist-modal"><i class="fas fa-times"></i></button><div id="scientist-data"></div></div></div>
 
-    <footer><div class="footer-developers">Болохова Ксения Максимовна • Луговской Данил Кириллович<br>Томский техникум информационных технологий "ТТИТ"</div></footer>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-developers">
+                Разработан студентами Томского техникума информационных технологий "ТТИТ":<br>
+                Болохова Ксения Максимовна • Луговской Данил Кириллович
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // ==================== ПОЛНЫЕ ДАННЫЕ ====================
         const appData = {
             currentSubject: null,
             mathTeams: [{ name: 'Геометры', score: 0, isCurrent: true }, { name: 'Алгебраисты', score: 0, isCurrent: false }],
             physicsTeams: [{ name: 'Протоны', score: 0, isCurrent: true }, { name: 'Электроны', score: 0, isCurrent: false }],
-            
             mathQuiz: {
-                topics: ['Тригонометрия', 'Логарифмы', 'Производные', 'Интегралы', 'Вероятность'],
+                topics: ['Тригонометрия', 'Логарифмы', 'Производные', 'Интегралы', 'Теория вероятностей'],
                 questions: [
-                    [{points:10,q:'sin(π/6) = ?',a:['1/2','√2/2','√3/2','1'],c:0,exp:'sin30°=1/2'},{points:20,q:'2sin²x-1=0 на [0,2π]',a:['π/4,3π/4','π/4,3π/4,5π/4,7π/4','π/2,3π/2','0,π'],c:1,exp:'sinx=±√2/2'},{points:30,q:'(sinα+cosα)²+(sinα-cosα)²',a:['1','2','sin²α+cos²α','0'],c:1,exp:'=2'},{points:40,q:'sin75°·cos15°',a:['1/4','1/2','√3/4','(√6+√2)/4'],c:0,exp:'1/2[sin90+sin60]'},{points:50,q:'sinx+cosx=1',a:['x=2πk, x=π/2+2πk','x=πk','x=0,π/2','x=π/2+2πk'],c:0,exp:'√2sin(x+π/4)=1'}],
-                    [{points:10,q:'log₂8 = ?',a:['2','3','4','5'],c:1,exp:'2³=8'},{points:20,q:'log₃(x+1)=2',a:['8','9','10','11'],c:0,exp:'x+1=9→x=8'},{points:30,q:'log₅125+log₅25-log₅5',a:['3','4','5','6'],c:1,exp:'3+2-1=4'},{points:40,q:'log₀.₅(2x-1)>2',a:['x<1.25','x>1.25','0.5<x<0.625','x<0.5'],c:2,exp:'0<2x-1<0.25'},{points:50,q:'2ˣ·3ʸ=72, log₂x+log₂y=3',a:['x=6,y=2','x=8,y=1','x=4,y=4','x=3,y=4'],c:0,exp:'xy=8, подбор'}],
-                    [{points:10,q:'x³ производная',a:['3x²','3x','x²','2x²'],c:0,exp:'(xⁿ)\'=nxⁿ⁻¹'},{points:20,q:'eˣ+ln x производная',a:['eˣ+1/x','eˣ-1/x','eˣ+x','eˣ-x'],c:0},{points:30,q:'sin(2x+1) производная',a:['2cos(2x+1)','cos(2x+1)','-2cos','2sin'],c:0},{points:40,q:'x·eˣ производная',a:['eˣ(x+1)','eˣ','x·eˣ','eˣ(x-1)'],c:0},{points:50,q:'ln(x²+1) производная',a:['2x/(x²+1)','1/(x²+1)','2x','2/(x²+1)'],c:0}],
-                    [{points:10,q:'∫x² dx',a:['x³/3+C','x³+C','2x+C','x²/2+C'],c:0},{points:20,q:'∫eˣ dx',a:['eˣ+C','eˣ/x+C','lnx+C','x·eˣ+C'],c:0},{points:30,q:'∫₀¹(2x+3)dx',a:['4','5','3','6'],c:0,exp:'x²+3x от 0 до 1 = 4'},{points:40,q:'∫cos x dx',a:['sinx+C','-sinx+C','cosx+C','-cosx+C'],c:0},{points:50,q:'∫1/x dx',a:['ln|x|+C','1/x²+C','-1/x²+C','lnx+C'],c:0}],
-                    [{points:10,q:'P(орла) при броске монеты',a:['1/2','1/3','1/4','1'],c:0},{points:20,q:'Сумма 7 на двух костях',a:['1/6','1/12','1/36','1/18'],c:0},{points:30,q:'5 красных,3 синих, P(красный)',a:['5/8','3/8','1/2','5/3'],c:0},{points:40,q:'P₁=0.8, P₂=0.6, оба попадут',a:['0.48','0.14','0.9','1.4'],c:0},{points:50,q:'0.7 проработает, из 3 хотя бы одна',a:['0.973','0.3','0.7','0.027'],c:0,exp:'1-0.3³=0.973'}]
+                    [{points:10,question:'Чему равен sin(π/6)?',answers:['1/2','√2/2','√3/2','1'],correct:0,explanation:'sin(π/6) = 1/2'},
+                     {points:20,question:'2sin²x - 1 = 0 на [0,2π]',answers:['π/4,3π/4','π/4,3π/4,5π/4,7π/4','π/2,3π/2','0,π'],correct:1},
+                     {points:30,question:'(sinα+cosα)²+(sinα-cosα)²',answers:['1','2','sin²α+cos²α','0'],correct:1},
+                     {points:40,question:'sin75°·cos15°',answers:['1/4','1/2','√3/4','(√6+√2)/4'],correct:0},
+                     {points:50,question:'sinx+cosx=1',answers:['x=2πk, x=π/2+2πk','x=πk, x=π/2+2πk','x=0, x=π/2','x=π/2+2πk'],correct:0}],
+                    [{points:10,question:'log₂8?',answers:['2','3','4','5'],correct:1},{points:20,question:'log₃(x+1)=2',answers:['8','9','10','11'],correct:0},{points:30,question:'log₅125+log₅25-log₅5',answers:['3','4','5','6'],correct:1},{points:40,question:'log₀.₅(2x-1)>2',answers:['x<1.25','x>1.25','0.5<x<0.625','x<0.5'],correct:2},{points:50,question:'2ˣ·3ʸ=72, log₂x+log₂y=3',answers:['x=6,y=2','x=8,y=1','x=4,y=4','x=3,y=4'],correct:0}],
+                    [{points:10,question:'f(x)=x³ производная',answers:['3x²','3x','x²','2x²'],correct:0},{points:20,question:'f(x)=eˣ+lnx',answers:['eˣ+1/x','eˣ-1/x','eˣ+x','eˣ-x'],correct:0},{points:30,question:'sin(2x+1) производная',answers:['2cos(2x+1)','cos(2x+1)','-2cos(2x+1)','2sin(2x+1)'],correct:0},{points:40,question:'x·eˣ производная',answers:['eˣ(x+1)','eˣ','x·eˣ','eˣ(x-1)'],correct:0},{points:50,question:'ln(x²+1) производная',answers:['2x/(x²+1)','1/(x²+1)','2x','2/(x²+1)'],correct:0}],
+                    [{points:10,question:'∫x² dx',answers:['x³/3+C','x³+C','2x+C','x²/2+C'],correct:0},{points:20,question:'∫eˣ dx',answers:['eˣ+C','eˣ/x+C','lnx+C','x·eˣ+C'],correct:0},{points:30,question:'∫₀¹(2x+3)dx',answers:['4','5','3','6'],correct:0},{points:40,question:'∫cosx dx',answers:['sinx+C','-sinx+C','cosx+C','-cosx+C'],correct:0},{points:50,question:'∫1/x dx',answers:['ln|x|+C','1/x²+C','-1/x²+C','lnx+C'],correct:0}],
+                    [{points:10,question:'P(орла) при броске монеты',answers:['1/2','1/3','1/4','1'],correct:0},{points:20,question:'Сумма 7 на двух костях',answers:['1/6','1/12','1/36','1/18'],correct:0},{points:30,question:'5 красных,3 синих, P(красный)',answers:['5/8','3/8','1/2','5/3'],correct:0},{points:40,question:'P₁=0.8,P₂=0.6, оба попадут',answers:['0.48','0.14','0.9','1.4'],correct:0},{points:50,question:'0.7 проработает, из 3 хотя бы одна',answers:['0.973','0.3','0.7','0.027'],correct:0}]
                 ]
             },
             physicsQuiz: {
-                topics: ['Механика', 'Термодинамика', 'Электродинамика', 'Оптика', 'Кванты'],
+                topics: ['Механика', 'Термодинамика', 'Электродинамика', 'Оптика', 'Квантовая физика'],
                 questions: [
-                    [{points:10,q:'g на Земле?',a:['9.8 м/с²','10 м/с²','6.67','3e8'],c:0},{points:20,q:'72 км/ч за 10с путь',a:['200 м','100м','300м','400м'],c:0,exp:'20м/с*10=200м'},{points:30,q:'m=2кг, a=3м/с² вверх, T?',a:['26Н','20Н','30Н','6Н'],c:0,exp:'2*(9.8+3)=25.6≈26'},{points:40,q:'10г,800→400м/с, работа',a:['2400Дж','1200','4800','
+                    [{points:10,question:'g на Земле?',answers:['9.8 м/с²','10 м/с²','6.67','3e8'],correct:0},{points:20,question:'72 км/ч за 10с путь',answers:['200 м','100м','300м','400м'],correct:0},{points:30,question:'m=2кг, a=3м/с² вверх, T?',answers:['26Н','20Н','30Н','6Н'],correct:0},{points:40,question:'10г,800→400м/с, работа',answers:['2400Дж','1200','4800','600'],correct:0},{points:50,question:'S=1.2м, a=1.5м/с², скорость',answers:['1.9м/с','2.4','3.0','1.2'],correct:0}],
+                    [{points:10,question:'0° по Кельвину',answers:['-273°C','-100°C','0°C','100°C'],correct:0},{points:20,question:'Изотермический процесс',answers:['T=const','p=const','V=const','Q=const'],correct:0},{points:30,question:'1 моль, 300→400К, работа',answers:['831 Дж','1662','2493','3324'],correct:0},{points:40,question:'η=40%, Tн=500К, Tх?',answers:['300К','350','400','450'],correct:0},{points:50,question:'2кг воды 20→100°C',answers:['672 кДж','840','1008','1176'],correct:0}],
+                    [{points:10,question:'Заряд электрона',answers:['-1.6e-19 Кл','1.6e-19','-1.6e-31','9.1e-31'],correct:0},{points:20,question:'I=2А, t=5с, q?',answers:['10 Кл','2','5','0.4'],correct:0},{points:30,question:'L=10м, S=2мм², R=0.5 Ом, ρ?',answers:['0.1','0.01','1','10'],correct:0},{points:40,question:'U=12В, I=3А, R?',answers:['4 Ом','36','0.25','15'],correct:0},{points:50,question:'C=10мкФ, U=100В, W?',answers:['0.05 Дж','0.1','0.01','1'],correct:0}],
+                    [{points:10,question:'Скорость света',answers:['3e8 м/с','3e5','340','1.5e8'],correct:0},{points:20,question:'Угол падения',answers:['между лучом и нормалью','между лучами','между отраженным и нормалью','между преломленным и нормалью'],correct:0},{points:30,question:'F=20см, D?',answers:['5 дптр','0.05','20','0.2'],correct:0},{points:40,question:'d=30см, F=20см, f?',answers:['60 см','15','12','10'],correct:0},{points:50,question:'λ=700нм, ν?',answers:['4.29e14 Гц','2.14e14','1.5e15','3e8'],correct:0}],
+                    [{points:10,question:'Кто создал квантовую теорию?',answers:['Планк','Эйнштейн','Бор','Шрёдингер'],correct:0},{points:20,question:'Фотон это?',answers:['квант излучения','частица ядра','заряженная частица','частица с массой'],correct:0},{points:30,question:'ν=5e14 Гц, E?',answers:['3.315e-19 Дж','6.63e-19','1.66e-19','3e8'],correct:0},{points:40,question:'Красная граница',answers:['мин. частота','макс. частота','длина волны','энергия'],correct:0},{points:50,question:'Постоянная Планка',answers:['6.63e-34 Дж·с','1.05e-34','3e8','1.6e-19'],correct:0}]
+                ]
+            },
+            mathTasks: [{id:1,topic:'Тригонометрия',text:'2cos²x - √3cosx = 0 на [0,2π]. Меньший корень?',answer:'π/6',explanation:'cosx=0 или cosx=√3/2, меньший π/6'},{id:2,topic:'Логарифмы',text:'log₂(x-3)+log₂(x-1)=3',answer:'5',explanation:'x=5'},{id:3,topic:'Производные',text:'f(x)=3x⁴-2x³+5x-7, f\'(1)=?',answer:'11',explanation:'12-6+5=11'},{id:4,topic:'Интегралы',text:'∫₀²(3x²+2x-5)dx',answer:'2',explanation:'8+4-10=2'},{id:5,topic:'Вероятность',text:'Сумма 7 на двух костях',answer:'1/6',explanation:'6/36=1/6'}],
+            physicsTasks: [{id:1,topic:'Кинематика',text:'Тело вверх 30м/с, Eк уменьшилась в 4 раза, h?',answer:'34',explanation:'v=15м/с, h≈34м'},{id:2,topic:'Динамика',text:'m=2кг, μ=0.3, угол30°, Fmin?',answer:'6',explanation:'F≈5.79≈6Н'},{id:3,topic:'Термодинамика',text:'1 моль, изобарно 300→400К, A?',answer:'831',explanation:'A=831Дж'},{id:4,topic:'Электродинамика',text:'2м, 10см, 5А и 10А, F в мкН?',answer:'200',explanation:'200 мкН'},{id:5,topic:'Оптика',text:'h=2см, d=30см, F=20см, H?',answer:'4',explanation:'f=60см, Г=2, H=4см'}],
+            mathScientists: [{name:'Исаак Ньютон',field:'Математика, Физика',image:'https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg',facts:'Создал дифференциальное и интегральное исчисление.',achievements:['Дифференциальное исчисление','Законы Ньютона','Закон тяготения']},{name:'Леонард Эйлер',field:'Математика',image:'https://upload.wikimedia.org/wikipedia/commons/d/d7/Leonhard_Euler.jpg',facts:'Ввел обозначения f(x), e, Σ.',achievements:['Формула Эйлера','Теория графов','Более 850 работ']},{name:'Карл Гаусс',field:'Математика',image:'https://upload.wikimedia.org/wikipedia/commons/9/9b/Carl_Friedrich_Gauss.jpg',facts:'Король математиков.',achievements:['Метод наименьших квадратов','Теория чисел','Нормальное распределение']},{name:'Готфрид Лейбниц',field:'Математика',image:'https://upload.wikimedia.org/wikipedia/commons/6/6a/Gottfried_Wilhelm_von_Leibniz.jpg',facts:'Создал математический анализ.',achievements:['Математический анализ','Двоичная система','Символическая логика']}],
+            physicsScientists: [{name:'Альберт Эйнштейн',field:'Физика',image:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg',facts:'Теория относительности.',achievements:['Специальная теория','Общая теория','Фотоэффект']},{name:'Никола Тесла',field:'Физика',image:'https://upload.wikimedia.org/wikipedia/commons/7/79/Tesla_circa_1890.jpeg',facts:'Гений электричества.',achievements:['Переменный ток','Трансформатор Теслы','Беспроводная передача']},{name:'Мария Кюри',field:'Физика, Химия',image:'https://upload.wikimedia.org/wikipedia/commons/c/c8/Marie_Curie_c._1920s.jpg',facts:'Две Нобелевские премии.',achievements:['Радий','Полоний','Радиоактивность']},{name:'Макс Планк',field:'Физика',image:'https://avatars.mds.yandex.net/get-entity_search/5485905/1170900248/S600xU_2x',facts:'Основоположник квантовой теории.',achievements:['Квантовая теория','Постоянная Планка','Формула излучения']}]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.start-subject').forEach(btn => btn.addEventListener('click', () => startSubject(btn.dataset.subject)));
+            document.querySelectorAll('.subject-btn').forEach(btn => btn.addEventListener('click', () => { if(appData.currentSubject !== btn.dataset.subject) startSubject(btn.dataset.subject); }));
+            document.addEventListener('click', e => { const btn = e.target.closest('[data-content]'); if(btn && appData.currentSubject) showContentSection(appData.currentSubject, btn.dataset.content); });
+            ['math','physics'].forEach(sub => { initSubjectEvents(sub); loadQuizTable(sub); loadTasks(sub); loadScientists(sub); });
+            document.getElementById('close-question-modal')?.addEventListener('click', () => document.getElementById('question-modal').classList.remove('active'));
+            document.getElementById('close-scientist-modal')?.addEventListener('click', () => document.getElementById('scientist-modal').classList.remove('active'));
+            [document.getElementById('question-modal'), document.getElementById('scientist-modal')].forEach(modal => modal?.addEventListener('click', e => { if(e.target === modal) modal.classList.remove('active'); }));
+        });
+
+        function startSubject(subject) {
+            appData.currentSubject = subject;
+            document.getElementById('subject-selection').style.display = 'none';
+            document.getElementById('subject-nav').style.display = 'flex';
+            document.querySelectorAll('.subject-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.subject-btn.${subject}`).classList.add('active');
+            document.querySelectorAll('.subject-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(`${subject}-content`).classList.add('active');
+            document.querySelectorAll(`#${subject}-content .content-section`).forEach(s => s.classList.remove('active'));
+            document.getElementById(`${subject}-teams`).classList.add('active');
+            updateTeamsDisplay(subject);
+        }
+
+        function showContentSection(subject, content) {
+            document.querySelectorAll(`#${subject}-content .content-section`).forEach(s => s.classList.remove('active'));
+            const section = document.getElementById(`${subject}-${content}`);
+            if(section) section.classList.add('active');
+        }
+
+        function initSubjectEvents(subject) {
+            [`${subject}-team1`, `${subject}-team2`, `${subject}-team3`].forEach(id => document.getElementById(id)?.addEventListener('input', () => updateTeamsFromInputs(subject)));
+            document.getElementById(`${subject}-next-team`)?.addEventListener('click', () => nextTeam(subject));
+            document.getElementById(`${subject}-next-team-quiz`)?.addEventListener('click', () => nextTeam(subject));
+            document.getElementById(`${subject}-reset-quiz`)?.addEventListener('click', () => resetQuiz(subject));
+            document.getElementById(`${subject}-next-task`)?.addEventListener('click', () => nextTask(subject));
+        }
+
+        function updateTeamsFromInputs(subject) {
+            const teams = subject === 'math' ? appData.mathTeams : appData.physicsTeams;
+            for(let i=0;i<3;i++){
+                const input = document.getElementById(`${subject}-team${i+1}`);
+                if(input && input.value.trim()){
+                    if(i<teams.length) teams[i].name = input.value.trim();
+                    else teams.push({ name: input.value.trim(), score: 0, isCurrent: false });
+                }
+            }
+            for(let i=teams.length-1; i>=2; i--) if(!teams[i].name?.trim()) teams.splice(i,1);
+            updateTeamsDisplay(subject);
+        }
+
+        function updateTeamsDisplay(subject) {
+            const teams = subject === 'math' ? appData.mathTeams : appData.physicsTeams;
+            const container = document.getElementById(`${subject}-teams-display`);
+            if(!container) return;
+            container.innerHTML = '';
+            teams.forEach(team => {
+                const card = document.createElement('div');
+                card.className = `team-card ${team.isCurrent ? 'current' : ''}`;
+                card.innerHTML = `<div class="team-name">${team.name}</div><div class="team-score">${team.score} баллов</div>`;
+                container.appendChild(card);
+            });
+        }
+
+        function nextTeam(subject) {
+            const teams = subject === 'math' ? appData.mathTeams : appData.physicsTeams;
+            if(teams.length<2) return;
+            const idx = teams.findIndex(t => t.isCurrent);
+            teams[idx].isCurrent = false;
+            teams[(idx+1)%teams.length].isCurrent = true;
+            updateTeamsDisplay(subject);
+        }
+
+        function resetQuiz(subject) {
+            document.querySelectorAll(`.question-cell[data-subject="${subject}"]`).forEach(cell => { cell.classList.remove('answered','wrong'); cell.style.pointerEvents = 'auto'; cell.style.opacity = '1'; });
+            const teams = subject === 'math' ? appData.mathTeams : appData.physicsTeams;
+            teams.forEach((t,i) => { t.score = 0; t.isCurrent = i===0; });
+            updateTeamsDisplay(subject);
+            alert('Квиз сброшен!');
+        }
+
+        function loadQuizTable(subject) {
+            const quiz = subject==='math'?appData.mathQuiz:appData.physicsQuiz;
+            const tbody = document.querySelector(`#${subject}-quiz-table tbody`);
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            quiz.topics.forEach((topic, ti) => {
+                const row = tbody.insertRow();
+                row.insertCell(0).textContent = topic;
+                row.cells[0].className = 'topic-cell';
+                for(let pts=10; pts<=50; pts+=10){
+                    const cell = row.insertCell();
+                    cell.className = 'question-cell';
+                    const q = quiz.questions[ti]?.find(qq=>qq.points===pts);
+                    if(q){
+                        cell.innerHTML = `<div class="question-points">${pts}</div>`;
+                        cell.dataset.topic = ti; cell.dataset.points = pts; cell.dataset.subject = subject;
+                        cell.onclick = () => openQuestionModal(subject, ti, pts);
+                    } else { cell.innerHTML = '-'; cell.style.cursor='default'; cell.style.opacity='0.5'; }
+                }
+            });
+        }
+
+        function openQuestionModal(subject, topicIdx, points) {
+            const quiz = subject==='math'?appData.mathQuiz:appData.physicsQuiz;
+            const q = quiz.questions[topicIdx].find(qq=>qq.points===points);
+            const teams = subject==='math'?appData.mathTeams:appData.physicsTeams;
+            const current = teams.find(t=>t.isCurrent);
+            if(!q||!current) return;
+            const modal = document.getElementById('question-modal');
+            document.getElementById('question-data').innerHTML = `
+                <h2 style="margin-bottom:20px;color:#818cf8;">${quiz.topics[topicIdx]} - ${points} баллов</h2>
+                <div class="question-text">${q.question}</div>
+                <div class="answers-container">${q.answers.map((a,i)=>`<button class="answer-btn" data-index="${i}">${a}</button>`).join('')}</div>
+                <div class="modal-controls" style="display:flex;justify-content:space-between;"><div>Отвечает: <strong>${current.name}</strong></div><button class="task-btn" id="submit-answer">Подтвердить</button></div>`;
+            modal.classList.add('active');
+            document.querySelectorAll('.answer-btn').forEach(btn => btn.onclick = function(){ document.querySelectorAll('.answer-btn').forEach(b=>b.classList.remove('selected')); this.classList.add('selected'); });
+            document.getElementById('submit-answer').onclick = () => {
+                const selected = document.querySelector('.answer-btn.selected');
+                if(!selected){ alert('Выберите ответ'); return; }
+                const isCorrect = parseInt(selected.dataset.index) === q.correct;
+                if(isCorrect){ current.score += points; alert(`Правильно! +${points} баллов`); markQuestion(subject,topicIdx,points,true); }
+                else { alert(`Неверно! Ответ: ${q.answers[q.correct]}\n${q.explanation||''}`); markQuestion(subject,topicIdx,points,false); }
+                updateTeamsDisplay(subject);
+                nextTeam(subject);
+                modal.classList.remove('active');
+            };
+        }
+
+        function markQuestion(subject,topic,points,correct){
+            const cell = document.querySelector(`.question-cell[data-subject="${subject}"][data-topic="${topic}"][data-points="${points}"]`);
+            if(cell){ cell.classList.add('answered'); if(!correct) cell.classList.add('wrong'); cell.style.pointerEvents='none'; cell.style.opacity='0.7'; }
+        }
+
+        function loadTasks(subject){
+            const tasks = subject==='math'?appData.mathTasks:appData.physicsTasks;
+            const container = document.getElementById(`${subject}-tasks-container`);
+            if(container && tasks.length) createTaskElement(tasks[0], subject, container);
+        }
+
+        function createTaskElement(task, subject, container){
+            container.innerHTML = `
+                <div class="task" id="${subject}-task-${task.id}">
+                    <div class="task-header"><div class="task-number">Задача №${task.id} (${task.topic})</div><div class="task-attempts"><span>Попытки:</span><div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div></div></div>
+                    <div class="task-text">${task.text}</div>
+                    <div class="answer-input-container"><input type="text" class="answer-input" id="${subject}-answer-${task.id}" placeholder="Ваш ответ..."><button class="task-btn" data-id="${task.id}"><i class="fas fa-check"></i> Проверить</button></div>
+                    <div class="task-feedback" id="${subject}-feedback-${task.id}"></div>
+                </div>`;
+            container.querySelector('.task-btn').onclick = () => checkTaskAnswer(task.id, subject);
+        }
+
+        function checkTaskAnswer(taskId, subject){
+            const tasks = subject==='math'?appData.mathTasks:appData.physicsTasks;
+            const task = tasks.find(t=>t.id===taskId);
+            const input = document.getElementById(`${subject}-answer-${taskId}`);
+            const fb = document.getElementById(`${subject}-feedback-${taskId}`);
+            const dots = document.querySelectorAll(`#${subject}-task-${taskId} .attempt-dot`);
+            let used = [...dots].filter(d=>d.classList.contains('used')).length;
+            if(used>=3){ alert('Попытки исчерпаны'); return; }
+            dots[used].classList.add('used');
+            const user = input.value.trim().toLowerCase().replace(/\s+/g,' ');
+            const correct = task.answer.toLowerCase();
+            const isNum = !isNaN(parseFloat(user)) && !isNaN(parseFloat(correct)) && parseFloat(user)===parseFloat(correct);
+            if(isNum || user===correct){
+                fb.innerHTML = `<strong>Правильно!</strong><br>${task.explanation}`;
+                fb.className = 'task-feedback correct';
+                const teams = subject==='math'?appData.mathTeams:appData.physicsTeams;
+                const cur = teams.find(t=>t.isCurrent);
+                if(cur){ cur.score+=20; updateTeamsDisplay(subject); }
+            } else {
+                fb.innerHTML = `<strong>Неверно!</strong> Попробуйте ещё.${used>=2?`<br><br><strong>Ответ:</strong> ${task.answer}<br><strong>Объяснение:</strong> ${task.explanation}`:''}`;
+                fb.className = 'task-feedback incorrect';
+                if(used>=2) fb.innerHTML = `<strong>Исчерпаны попытки!</strong><br><strong>Ответ:</strong> ${task.answer}<br><strong>Объяснение:</strong> ${task.explanation}`;
+            }
+        }
+
+        function nextTask(subject){
+            const tasks = subject==='math'?appData.mathTasks:appData.physicsTasks;
+            const container = document.getElementById(`${subject}-tasks-container`);
+            const cur = container?.querySelector('.task');
+            if(!cur) return;
+            const curId = parseInt(cur.id.match(/\d+$/)[0]);
+            let nextIdx = tasks.findIndex(t=>t.id===curId)+1;
+            if(nextIdx>=tasks.length) nextIdx=0;
+            createTaskElement(tasks[nextIdx], subject, container);
+        }
+
+        function loadScientists(subject){
+            const scientists = subject==='math'?appData.mathScientists:appData.physicsScientists;
+            const grid = document.getElementById(`${subject}-scientists-grid`);
+            if(!grid) return;
+            grid.innerHTML = '';
+            scientists.forEach(s => {
+                const card = document.createElement('div');
+                card.className = 'scientist-card';
+                card.innerHTML = `<img src="${s.image}" class="scientist-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23334155%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%239ca3af%22%3E${s.name[0]}%3C/text%3E%3C/svg%3E'"><div class="scientist-info"><div class="scientist-name">${s.name}</div><div class="scientist-field">${s.field}</div><div class="scientist-facts">${s.facts.substring(0,100)}...</div></div>`;
+                card.onclick = () => openScientistModal(s);
+                grid.appendChild(card);
+            });
+        }
+
+        function openScientistModal(s){
+            const modal = document.getElementById('scientist-modal');
+            document.getElementById('scientist-data').innerHTML = `
+                <div class="scientist-modal-header" style="display:flex;gap:20px;flex-wrap:wrap;"><img src="${s.image}" style="width:130px;height:130px;border-radius:50%;object-fit:cover;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle fill=%22%23334155%22 cx=%2250%22 cy=%2250%22 r=%2245%22/%3E%3Ctext x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%239ca3af%22%3E${s.name[0]}%3C/text%3E%3C/svg%3E'"><div><h2>${s.name}</h2><div style="color:#818cf8;">${s.field}</div><p style="margin-top:10px;">${s.facts}</p></div></div>
+                <div><h3 style="margin:20px 0 10px 0;">Достижения:</h3>${s.achievements.map(a=>`<p><i class="fas fa-star" style="color:#f59e0b;"></i> ${a}</p>`).join('')}</div>`;
+            modal.classList.add('active');
+        }
+    </script>
+</body>
+</html>
